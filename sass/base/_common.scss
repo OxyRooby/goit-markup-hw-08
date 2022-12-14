@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+body a{
+    text-decoration: none;
+    color: #212121;
+        & a,
+        & a *,
+        & button,
+        & button * {
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
