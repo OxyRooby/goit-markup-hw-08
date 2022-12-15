@@ -46,21 +46,21 @@
                         </svg>+38 096 111 11 11</a>
                 </li>
             </ul>
-            <button type="button" class="menu-open">
+            <button type="button" class="menu-open" data-menu-open>
                 <svg class="menu-open-icon" weight="24" height="16">
                     <use href="./images/icons.svg#icon-menu_24px"></use>
                 </svg>
             </button>
-            <div class="mob-menu">
+            <div class="mob-menu is-hidden" data-menu>
                 <div class="container container-menu">
-                    <button type="button" class="menu-close">
+                    <button type="button" class="menu-close" data-menu-close>
                         <svg class="menu-close-icon" weight="19" height="19">
                             <use href="./images/icons.svg#icon-close-black"></use>
                         </svg>
                     </button>
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <a class="menu-link is-active" href="./index.html">Студія</a>
+                            <a class="menu-link" href="./index.html">Студія</a>
                         </li>
                         <li class="menu-item">
                             <a class="menu-link" href="./portfolio.html">Портфоліо</a>
@@ -69,30 +69,21 @@
                             <a class="menu-link" href="#">Контакти</a>
                         </li>
                     </ul>
-                    <ul class="menu-contact-list">
-                        <li class="menu-contact">
-                            <a class="menu-contact-mail" href="mailto:info@devstudio.com">
+                    <div class="menu-contact">
+                        <a class="menu-mail" href="mailto:info@devstudio.com">
                             info@devstudio.com</a>
-                        </li>
-                        <li class="menu-contact">
-                            <a class="menu-contact-telephon" href="tel:+380961111111">
-                                +38 096 111 11 11</a>
-                        </li>
-                    </ul>
-                    <!-- <ul class="menu-soc">
-                        <li class="menu-soc-item">
+                        <a class="menu-telephon" href="tel:+380961111111">
+                            +38 096 111 11 11</a>
+                        <p class="menu-soc">
                             <a href="#" class="menu-soc-link">Instagram</a>
-                        </li>
-                    </ul> -->
-                    <p class="menu-soc">
-                        <a href="#" class="menu-soc-link">Instagram</a>
-                        <span class="soc-line">|</span>
-                        <a href="#" class="menu-soc-link">Twitter</a>
-                        <span class="soc-line">|</span>
-                        <a href="#" class="menu-soc-link">Facebook</a>
-                        <span class="soc-line">|</span>
-                        <a href="#" class="menu-soc-link">LinkedIn</a>
-                    </p>
+                            <span class="soc-line">|</span>
+                            <a href="#" class="menu-soc-link">Twitter</a>
+                            <span class="soc-line">|</span>
+                            <a href="#" class="menu-soc-link">Facebook</a>
+                            <span class="soc-line">|</span>
+                            <a href="#" class="menu-soc-link">LinkedIn</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,21 +159,24 @@
             <div class="container about__container">
                 <h2 class="about__title">Чим ми займаємося</h2>
                 <ul class="picture-list">
-                    <li class="picture-listt__item">
+                    <li class="picture-list__item">
                         <div class="picture-wrap">
-                            <img src="./images/services1.jpg" alt="Десктопні додатки" width="370">
+                            <img srcset="./images/services1.jpg 1x, ./images/services1_2x.jpg 2x"
+                            src="./images/services1.jpg" alt="Десктопні додатки" width="370">
                             <p class="picture-wrap__text">Десктопні додатки</p>
                         </div>
                     </li>
                     <li class="picture-list__item">
                         <div class="picture-wrap">
-                            <img src="./images/services2.jpg" alt="Мобільні додатки" width="370">
+                            <img srcset="./images/services2.jpg 1x, ./images/services2_2x.jpg 2x"
+                            src="./images/services2.jpg" alt="Мобільні додатки" width="370">
                             <p class="picture-wrap__text">Мобільні додатки</p>
                         </div>
                     </li>
                     <li class="picture-list__item">
                         <div class="picture-wrap">
-                            <img src="./images/services3.jpg" alt="Дизайнерські рішення" width="370">
+                            <img srcset="./images/services3.jpg 1x, ./images/services3_2x.jpg 2x"
+                            src="./images/services3.jpg" alt="Дизайнерські рішення" width="370">
                             <p class="picture-wrap__text">Дизайнерські рішення</p>
                         </div>
                     </li>
@@ -195,7 +189,22 @@
                 <h2>Наша команда</h2>
                 <ul class="team-list">
                     <li class="team-list-item">
-                        <img src="./images/team1.jpg" alt="Product Designer" width="270">
+                        <picture>
+                            <source 
+                            srcset="./images/team1.jpg 1x, ./images/team1_2x.jpg 2x" 
+                            media="(min-width: 1200)">
+
+                            <source 
+                            srcset="./images/team1_tab.jpg 1x, ./images/team1_tab_2x.jpg 2x" 
+                            media="(min-width: 768)">
+
+                            <source 
+                            srcset="./images/team1_mob.jpg 1x, ./images/team1_mob_2x.jpg 2x" 
+                            media="(max-width: 767)">
+
+                            <img src="./images/team1_mob.jpg" alt="Product Designer" width="450">
+                        </picture>
+                        
                         <div class="team-list-name">
                             <h3 class="team-name">Ігор Дем'яненко</h3>
                             <p class="team-list-item-position">Product Designer</p>
@@ -233,7 +242,21 @@
                     </li>
 
                     <li class="team-list-item">
-                        <img src="./images/team2.jpg" alt="Frontend Developer" width="270">
+                        <picture>
+                            <source 
+                            srcset="./images/team2.jpg 1x, ./images/team2_2x.jpg 2x" 
+                            media="(min-width: 1200)">
+
+                            <source 
+                            srcset="./images/team2_tab.jpg 1x, ./images/team2_tab_2x.jpg 2x" 
+                            media="(min-width: 768)">
+
+                            <source 
+                            srcset="./images/team2_mob.jpg 1x, ./images/team2_mob_2x.jpg 2x" 
+                            media="(max-width: 767)">
+
+                            <img src="./images/team2_mob.jpg" alt="Frontend Developer" width="450">
+                        </picture>
                         <div class="team-list-name">
                             <h3 class="team-name">Ольга Рєпіна</h3>
                             <p class="team-list-item-position">Frontend Developer</p>
@@ -271,7 +294,21 @@
                     </li>
 
                     <li class="team-list-item">
-                        <img src="./images/team3.jpg" alt="Marketing" width="270">
+                        <picture>
+                            <source 
+                            srcset="./images/team3.jpg 1x, ./images/team3_2x.jpg 2x" 
+                            media="(min-width: 1200)">
+
+                            <source 
+                            srcset="./images/team3_tab.jpg 1x, ./images/team3_tab_2x.jpg 2x" 
+                            media="(min-width: 768)">
+
+                            <source 
+                            srcset="./images/team3_mob.jpg 1x, ./images/team3_mob_2x.jpg 2x" 
+                            media="(max-width: 767)">
+
+                            <img src="./images/team3_mob.jpg" alt="Marketing" width="450">
+                        </picture>
                         <div class="team-list-name">
                             <h3 class="team-name">Микола Тарасов</h3>
                             <p class="team-list-item-position">Marketing</p>
@@ -309,7 +346,21 @@
                     </li>
 
                     <li class="team-list-item">
-                        <img src="./images/team4.jpg" alt="UI Designer" width="270">
+                        <picture>
+                            <source 
+                            srcset="./images/team4.jpg 1x, ./images/team4_2x.jpg 2x" 
+                            media="(min-width: 1200)">
+
+                            <source 
+                            srcset="./images/team4_tab.jpg 1x, ./images/team4_tab_2x.jpg 2x" 
+                            media="(min-width: 768)">
+
+                            <source 
+                            srcset="./images/team4_mob.jpg 1x, ./images/team4_mob_2x.jpg 2x" 
+                            media="(max-width: 767)">
+
+                            <img src="./images/team4_mob.jpg" alt="UI Designerr" width="450">
+                        </picture>
                         <div class="team-list-name">
                             <h3 class="team-name">Михайло Єрмаков</h3>
                             <p class="team-list-item-position">UI Designer</p>
@@ -535,6 +586,7 @@
         </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

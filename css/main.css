@@ -39,6 +39,10 @@ body a a, body a a *, body a button, body a button * {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 :root {
   --logo_font: "Raleway", sans-serif;
   --text-color: #757575;
@@ -46,6 +50,9 @@ body a a, body a a *, body a button, body a button * {
   --active-accent-color: #188CE8;
   --white-color: #FFFFFF;
   --icon-grey-color: #AFB1B8;
+  --gradient: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.2));
 }
 
 .hide {
@@ -552,6 +559,25 @@ button {
   background-color: #ffffff;
   padding: 48px 40px;
 }
+.mob-menu > .container-menu {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: auto;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu {
+    display: none;
+  }
+}
 
 .menu-close {
   width: 40px;
@@ -571,14 +597,99 @@ button {
   position: absolute;
   right: 15px;
   top: 10px;
+  padding: 11px;
+}
+
+.menu-close-icon {
+  width: 19px;
+  height: 19px;
+}
+.menu-close-icon:hover {
+  fill: var(--accent-color);
+}
+
+.menu-item {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+}
+.menu-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+.menu-item :hover {
+  color: var(--accent-color);
+}
+
+.menu-mail {
+  display: block;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+  margin-bottom: 32px;
+}
+
+.menu-telephon {
+  display: block;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  margin-bottom: 64px;
+}
+
+.menu-soc-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+
+.soc-line {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  color: #D3D3D3;
 }
 
 .main-page {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/main_page.jpg);
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/main_page.jpg);
+  background-image: var(--gradient), url(../images/main_bg_mob.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
   padding-top: 118px;
   padding-bottom: 118px;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .main-page {
+    background-image: var(--gradient), url(../images/main_bg_mob_2x.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-page {
+    background-image: var(--gradient), url(../images/main_bg_tab.jpg);
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .main-page {
+    background-image: var(--gradient), url(../images/main_bg_tab_2x.jpg);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main-page {
+    background-image: var(--gradient), url(../images/main_bg_desk.jpg);
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .main-page {
+    background-image: var(--gradient), url(../images/main_bg_desk_2x.jpg);
+  }
 }
 @media screen and (min-width: 1200px) {
   .main-page {
@@ -751,6 +862,11 @@ h2 {
   justify: space-between;
   gap: 30px;
   margin-top: 50px;
+}
+
+.picture-list__item {
+  width: 370px;
+  height: 294px;
 }
 
 .picture-wrap {
