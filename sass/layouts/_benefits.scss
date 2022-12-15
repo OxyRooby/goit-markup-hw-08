@@ -14,7 +14,6 @@
 }
 
 .inform-list__item {
-    // width: 270px; 
     width: 100%;
     width: calc((100% - 0px) / 1);
     @media screen and (min-width:768px) {
@@ -57,10 +56,12 @@ h3 {
 }
 
 .inform-list__title {
-    @media screen and (min-width:480px) {
         display: flex;
         justify-content: center;
-        text-align: center;  
-    }
+        text-align: center;
+        @media screen and (min-width:768px) {
+            justify-content: start;
+            text-align: left;
+        }
     
 }
